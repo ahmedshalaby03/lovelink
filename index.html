@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💕 For You</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ======= Page 1: Password ======= -->
+    <div id="page-password" class="page active">
+        <div class="animated-bg"></div>
+        <div class="floating-hearts" id="hearts-1"></div>
+
+        <div class="center-container">
+            <div class="card pulse-glow" id="password-card">
+                <div class="hearts-row">
+                    <span class="heart-icon small">❤</span>
+                    <span class="heart-icon big">❤</span>
+                    <span class="heart-icon small">❤</span>
+                </div>
+
+                <h1 class="romantic-title">Enter The Password 💕</h1>
+
+                <form id="password-form">
+                    <div class="input-wrapper">
+                        <span class="lock-icon">🔒</span>
+                        <input type="password" id="password-input" placeholder="enter the password here" dir="ltr">
+                    </div>
+                    <p id="error-msg" class="error-msg hidden">Wrong password, try again 💔</p>
+                    <button type="submit" class="btn pulse-glow">Enter 💝</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======= Page 2: Message ======= -->
+    <div id="page-message" class="page">
+        <div class="animated-bg"></div>
+        <div class="floating-hearts" id="hearts-2"></div>
+
+        <div class="center-container column">
+            <span class="heart-icon big scale-in">❤</span>
+
+            <div class="card message-card">
+                <p id="typed-text" class="typed-text" dir="rtl"></p>
+            </div>
+
+            <button id="next-btn" class="btn pulse-glow hidden" onclick="goToMemory()">
+                <span>←</span> next
+            </button>
+        </div>
+
+        <audio id="romantic-audio" loop>
+  <source src="Albumaty.Com_Tamer_Ashour_Khalini-[AudioTrimmer.com].mp3" type="audio/mpeg">
+</audio>
+
+<div class="audio-player glass">
+  <button id="playPauseBtn">▶️</button>
+
+  <input type="range" id="progressBar" value="0">
+
+  <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="1">
+
+</div>
+
+    </div>
+
+    <!-- ======= Page 3: Memory ======= -->
+<div id="page-memory" class="page">
+    <div class="animated-bg"></div>
+    <div class="floating-hearts" id="hearts-3"></div>
+
+    <div class="memory-container">
+        <!-- Hero -->
+        <div class="hero-image scale-in">
+            <img src="images/c (6).jpg" alt="ذكرى">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <h1 class="hero-text">Love You</h1>
+                    <p class="hero-subtext">
+                        كل لحظة بينا كانت بتسيب جوايا ذكرى أحلى من اللي قبلها،
+                        ووجودك في حياتي كان أجمل صدفة وأحلى نعمة
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Intro Message -->
+        <div class="card love-note-card fade-in">
+            <h2 class="section-title">رسالة ليك 💌</h2>
+            <p class="love-note">
+                يمكن الكلام ميكفيش يوصف اللي جوايا،
+                لكن الحقيقة إن وجودك فرق معايا في حاجات كتير جدًا
+                خليت أيامي أخف، وقلبي أهدى، والدنيا ألطف
+            </p>
+            <p class="love-note">
+                ومع كل يوم بيعدي، بتأكد أكتر إنك من أجمل الحاجات
+                اللي حصلتلي في حياتي، وإن كل الذكريات اللي بينا
+                تستاهل تتجمع في مكان واحد شبه ده.
+            </p>
+        </div>
+
+        <!-- Timer -->
+        <div class="card timer-card">
+            <div class="timer-header">
+                <span>📅</span>
+                <p>من أول يوم عرفنا بعض</p>
+                <span>🕐</span>
+            </div>
+            <div class="timer-grid" dir="rtl">
+                <div class="timer-item">
+                    <span class="timer-value" id="timer-seconds">0</span>
+                    <span class="timer-label">seconds</span>
+                </div>
+                <div class="timer-item">
+                    <span class="timer-value" id="timer-minutes">0</span>
+                    <span class="timer-label">minutes</span>
+                </div>
+                <div class="timer-item">
+                    <span class="timer-value" id="timer-hours">0</span>
+                    <span class="timer-label">hours</span>
+                </div>
+                <div class="timer-item">
+                    <span class="timer-value" id="timer-days">0</span>
+                    <span class="timer-label">days</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why You -->
+        <div class="card reasons-card fade-in">
+            <div class="reasons-grid">
+                <div class="reason-item">وجودك راحة</div>
+                <div class="reason-item">ضحكتك حياة</div>
+                <div class="reason-item">كلامك أمان</div>
+                <div class="reason-item">قربك نعمة</div>
+            </div>
+        </div>
+
+        <!-- Quote -->
+        <div class="quote-box fade-in">
+            <p>
+                "ومهما عدى وقت... هتفضل أجمل حد قلبي اختاره" 💕
+            </p>
+        </div>
+
+        <!-- Photos -->
+        <div class="gallery-header">
+            <h2 class="section-title">Memories 📸</h2>
+            <p class="gallery-subtitle">
+                شوية صور، لكن وراهم ألف إحساس وألف حكاية حلوة بينا
+            </p>
+        </div>
+
+        <div class="photos-grid">
+            <div class="photo-item"><img src="images/c (1).jpg" alt="ذكرى 1"></div>
+            <div class="photo-item"><img src="images/c (2).jpg" alt="ذكرى 2"></div>
+            <div class="photo-item"><img src="images/c (3).jpg" alt="ذكرى 3"></div>
+            <div class="photo-item"><img src="images/c (4).jpg" alt="ذكرى 4"></div>
+            <div class="photo-item"><img src="images/c (5).jpg" alt="ذكرى 5"></div>
+            <div class="photo-item"><img src="images/c (6).jpg" alt="ذكرى 6"></div>
+            <div class="photo-item"><img src="images/c (7).jpg" alt="ذكرى 7"></div>
+            <div class="photo-item"><img src="images/c (8).jpg" alt="ذكرى 8"></div>
+        </div>
+
+        <!-- Closing Message -->
+        <div class="card closing-card fade-in">
+            <h2 class="section-title">وفي الآخر... 🤍</h2>
+            <p class="closing-text">
+                يمكن دي مجرد صفحة صغيرة،
+                لكن اللي فيها معمول بحب كبير.
+                وكل تفصيلة هنا معمولالك إنت تحديدًا،
+                عشان أفضل أفكرك إنك غالي جدًا على قلبي.
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <span>❤</span>
+            <p>إنت كل حاجة حلوة في حياتي</p>
+            <span>❤</span>
+        </div>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
